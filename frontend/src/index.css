@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --forest: #0f3d2e;
+  --forest-deep: #0a2a1f;
+  --moss: #1f7a54;
+  --moss-light: #2d9b6a;
+  --stone: #f3f0ea;
+  --stone-dark: #e7e2d8;
+  --ink: #14201b;
+  --ink-muted: #5c6b63;
+  --surface: #fffcf7;
+  --radius: 0.75rem;
+}
+
+body {
+  font-family: "Manrope", system-ui, sans-serif;
+  color: var(--ink);
+  background-color: var(--stone);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: "Fraunces", Georgia, serif;
+}
+
+/* Motion */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ken-burns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+
+.animate-fade-up-delay {
+  animation: fade-up 0.7s ease-out 0.15s both;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fade-up 0.7s ease-out 0.3s both;
+}
+
+.hero-kenburns {
+  animation: ken-burns 18s ease-out forwards;
+}
+
+.btn-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-lift:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -12px rgba(15, 61, 46, 0.45);
+}
+
+/* Civic Forest utilities */
+.bg-forest {
+  background-color: var(--forest);
+}
+.bg-moss {
+  background-color: var(--moss);
+}
+.bg-stone {
+  background-color: var(--stone);
+}
+.text-forest {
+  color: var(--forest);
+}
+.text-moss {
+  color: var(--moss);
+}
+.text-ink {
+  color: var(--ink);
+}
+.text-ink-muted {
+  color: var(--ink-muted);
+}
+.border-stone {
+  border-color: var(--stone-dark);
+}
+
+.status-pill {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-semibold tracking-wide uppercase;
+}
